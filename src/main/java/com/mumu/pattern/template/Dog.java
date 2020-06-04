@@ -1,4 +1,4 @@
-package com.mumu.pattern.test;
+package com.mumu.pattern.template;
 
 /**
  * <p>
