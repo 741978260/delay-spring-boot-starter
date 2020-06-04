@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
-    @Autowired(required = false)
+    @Autowired
     private TestService testService;
 
     @GetMapping("/test")
