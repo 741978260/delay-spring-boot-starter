@@ -57,5 +57,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+        <!-- drools规则引擎 -->
+        <dependency>
+            <groupId>org.kie.server</groupId>
+            <artifactId>kie-server-client</artifactId>
+            <version>7.34.0.Final</version>
+        </dependency>
+        <!-- 自定义drools -->
+        <dependency>
+            <groupId>com.mumu</groupId>
+            <artifactId>drools-rule</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
