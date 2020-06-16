@@ -39,21 +39,18 @@ public class ApplicationDefaultRuleChain implements RuleChain {
     @Override
     public void doRule(RuleInput input, RuleOutput output) {
         int counter = pos.get();
-        try {
-            if (counter < rules.size()) {
-                Rule rule = rules.get(counter);
-                pos.set(counter + 1);
-                // 传递this 链
-                rule.doRule(input, output, this);
-            }
-        } catch (Exception e) {
-            pos.remove();
-        } finally {
-            // todo 这里有问题
-            if (counter >= rules.size()) {
-                pos.remove();
-            }
+        if (counter < rules.size()) {
+            Rule rule = rules.get(counter);
+            pos.set(counter + 1);
+            // 传递this 链
+            rule.doRule(input, output, this);
         }
-        // todo 执行链全部执行完，最后返回有问题
+    }
+
+    /**
+     * 重置
+     */
+    public void reset() {
+        pos.remove();
     }
 }

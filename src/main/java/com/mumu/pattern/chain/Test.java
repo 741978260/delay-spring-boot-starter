@@ -21,6 +21,10 @@ public class Test {
     private ApplicationDefaultRuleChain ruleChain;
 
     public void test() {
-        ruleChain.doRule(new RuleInput(), new RuleOutput());
+        try {
+            ruleChain.doRule(new RuleInput(), new RuleOutput());
+        } finally {
+            ruleChain.reset();
+        }
     }
 }
