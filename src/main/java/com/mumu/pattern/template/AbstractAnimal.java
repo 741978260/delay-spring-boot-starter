@@ -13,7 +13,19 @@ public abstract class AbstractAnimal {
 
     public void refresh(TestCallback action) {
         synchronized (this.monitor) {
-
+            step1();
+            step2();// 钩子方法
+            step3();// 抽象方法
         }
+    }
+
+    protected abstract void step3();
+
+    protected void step2() {
+        System.out.println("父类方法step2...");
+    }
+
+    private void step1() {
+        System.out.println("父类方法step1...");
     }
 }
