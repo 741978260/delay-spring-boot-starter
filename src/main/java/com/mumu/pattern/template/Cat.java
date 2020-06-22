@@ -1,5 +1,7 @@
 package com.mumu.pattern.template;
 
+import org.springframework.stereotype.Service;
+
 /**
  * <p>
  * </p>
@@ -7,6 +9,7 @@ package com.mumu.pattern.template;
  * @author cailin
  * @since 2020/5/11
  */
+@Service
 public class Cat extends AbstractAnimal {
     @Override
     protected void step3() {

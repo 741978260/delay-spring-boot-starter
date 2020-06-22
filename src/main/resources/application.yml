@@ -16,16 +16,42 @@ spring:
     addresses: 127.0.0.1:5672
     username: sa
     password: 123456
-    virtual-host: /vvv/sit
+    virtual-host: /fbs/sit
   cloud:
     stream:
       bindings:
         testInput:
           destination: exchange-fanout-888
           group: test-queue1
+        vmcInput:
+          binder: vmc-rabbitmq
+          destination: exchange-fanout-999
+          group: test-queue1
       rabbit:
         bindings:
           testInput.consumer:
             exchangeType: fanout
+          vmcInput.consumer:
+            exchangeType: fanout
+      binders:
+        rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: 127.0.0.1:5672
+                username: sa
+                password: 123456
+                virtual-host: /fbs/sit
+        vmc-rabbitmq:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: 127.0.0.1:5672
+                username: sa
+                password: 123456
+                virtual-host: /vvv/test
+      default-binder: rabbit
 
 
