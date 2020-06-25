@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author cailin
- * @since 2020/5/11
+ * @since 2020/6/19
  */
 @Service
-public class Dog extends AbstractAnimal {
+public class NiiTestBImpl implements NiiTest {
     @Override
-    protected void step3() {
-        System.out.println("子类实现step3...");
+    public void test() {
+        System.out.println("NiiTestBImpl");
     }
 }

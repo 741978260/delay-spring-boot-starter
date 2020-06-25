@@ -15,4 +15,9 @@ public interface TestChannel {
 
     @Input(TEST_INPUT)
     SubscribableChannel testInput();
+
+    String VMC_INPUT = "vmcInput";
+
+    @Input(VMC_INPUT)
+    SubscribableChannel vmcInput();
 }
