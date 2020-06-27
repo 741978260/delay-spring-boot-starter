@@ -95,6 +95,11 @@
             <artifactId>mica-core</artifactId>
             <version>${mica.version}</version>
         </dependency>
+        <!--ehcache-->
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- 阿里云maven仓库 -->
