@@ -15,6 +15,32 @@ public class TopK {
         // 计算每个单词的频率，并使用这些频率的自定义排序关系对单词进行排序。然后取前K
         List<String> topk = sort(words, k);
         System.out.println(topk);
+        // 方法二：堆
+        // 计算每个单词的频率，然后将其添加到存储到大小为k的小根堆中。它将频率最小的候选项放在堆的顶部。
+        // 最后，我们从堆中弹出最多 k 次，并反转结果，就可以得到前 k 个高频单词。
+        List<String> list = topKFrequent(words, k);
+        System.out.println(list);
+    }
+
+    private static List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> count = new HashMap<>(16);
+        for (String word : words) {
+            count.put(word, count.getOrDefault(word, 0) + 1);
+        }
+        PriorityQueue<String> heap = new PriorityQueue<>(
+                (w1, w2) -> count.get(w1).equals(count.get(w2)) ? w2.compareTo(w1) : count.get(w1) - count.get(w2));
+        for (String word : count.keySet()) {
+            heap.offer(word);
+            if (heap.size() > k) {
+                heap.poll();
+            }
+        }
+        List<String> ans = new ArrayList<>();
+        while (!heap.isEmpty()) {
+            ans.add(heap.poll());
+        }
+        Collections.reverse(ans);
+        return ans;
     }
 
     public static List<String> sort(String[] words, int k) {
