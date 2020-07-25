@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @since 2020/6/10
  */
 @Slf4j
-@Service
+//@Service
 public class Test {
 
     public void test() {

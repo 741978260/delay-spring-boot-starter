@@ -11,6 +11,9 @@ management:
   health:
     mail:
       enabled: false
+    rabbit:
+      enabled: false
+
 spring:
   rabbitmq:
     addresses: 127.0.0.1:5672
