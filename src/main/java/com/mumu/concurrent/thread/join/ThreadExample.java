@@ -1,4 +1,4 @@
-package com.mumu.thread.join;
+package com.mumu.concurrent.thread.join;
 
 /**
  * @Description join()：在一个线程中，调用other.join(),这时候当前线程会让出执行权给other线程，直到other线程执行完，或者过了超时时间之后，再继续执行当前线程，

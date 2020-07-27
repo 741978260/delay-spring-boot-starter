@@ -1,4 +1,4 @@
-package com.mumu.thread.yield;
+package com.mumu.concurrent.thread.yield;
 
 /**
  * @Description yield(): yield()方法为本地方法，也就是说yield()是由C或者C++实现的

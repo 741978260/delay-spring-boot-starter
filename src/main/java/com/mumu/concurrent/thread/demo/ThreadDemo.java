@@ -1,4 +1,4 @@
-package com.mumu.thread.demo;
+package com.mumu.concurrent.thread.demo;
 
 import java.util.concurrent.CountDownLatch;
 

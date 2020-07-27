@@ -1,4 +1,4 @@
-package com.mumu.thread.pool;
+package com.mumu.concurrent.thread.pool;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
