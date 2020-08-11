@@ -11,8 +11,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadPoolExample2 {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 5, 1, TimeUnit.SECONDS,
-                new LinkedBlockingQueue<>(5),
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 8, 2, TimeUnit.SECONDS,
+                new LinkedBlockingQueue<>(10),
                 new ThreadFactory() {
                     private final AtomicInteger threadNumber = new AtomicInteger(1);
 
@@ -36,10 +36,15 @@ public class ThreadPoolExample2 {
                 });
         for (int i = 0; i < 10; i++) {
             // 每3秒提交一个任务
-            TimeUnit.SECONDS.sleep(3);
+//            TimeUnit.SECONDS.sleep(3);
             threadPoolExecutor.execute(
                     () -> {
 //                        try {
+                        try {
+                            TimeUnit.SECONDS.sleep(15);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         System.out.println(Thread.currentThread().getName());
 //                            int i1 = 1 / 0;
 //                        throw new RuntimeException("runtime exception...");
