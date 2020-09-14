@@ -21,11 +21,15 @@ public class ThreadPoolExample {
             });
         }
 
+        executorService.shutdown();
+
         for (int i = 0; i < 10; i++) {
             executorService2.execute(() -> {
                 System.out.println(Thread.currentThread().getName());
             });
         }
+
+        executorService2.shutdown();
 
         Thread thread = new Thread(new Task());
         thread.start();
