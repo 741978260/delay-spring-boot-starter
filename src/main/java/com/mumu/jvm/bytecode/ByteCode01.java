@@ -1,4 +1,4 @@
-package com.mumu.bytecode;
+package com.mumu.jvm.bytecode;
 
 /**
  * @Description
