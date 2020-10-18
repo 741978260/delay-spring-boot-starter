@@ -9,4 +9,5 @@ package com.mumu.service;
  */
 public interface TestService {
     void execute();
+    void execute666();
 }

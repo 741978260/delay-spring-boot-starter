@@ -42,6 +42,11 @@ public class TestController {
         testService.execute();
     }
 
+    @GetMapping("/test666")
+    public void test666() {
+        testService.execute666();
+    }
+
     @Autowired
     private AtomicCounterResolver atomicCounterResolver;
 
