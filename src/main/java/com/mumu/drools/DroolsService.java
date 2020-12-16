@@ -46,7 +46,7 @@ public class DroolsService {
         people.setDrlType("people");
         //
         KieServices kieServices = KieServices.Factory.get();
-        StatelessKieSession kieSession = kieServices.getKieClasspathContainer().newStatelessKieSession("my-test");
+        StatelessKieSession kieSession = kieServices.getKieClasspathContainer(this.getClass().getClassLoader()).newStatelessKieSession("my-test");
         List<Command> commands = new ArrayList<>();
         KieCommands kieCommands = kieServices.getCommands();
         commands.add(kieCommands.newInsert(people, "input"));
