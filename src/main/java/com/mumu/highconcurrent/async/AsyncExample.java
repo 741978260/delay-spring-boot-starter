@@ -39,7 +39,7 @@ public class AsyncExample {
             taskExecutor.execute(() -> {
                 try {
                     Thread.sleep(1000);
-                    System.out.println("执行业务:" + n);
+                    System.out.println("当前线程：" + Thread.currentThread().getName() + ",执行业务:" + n);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
@@ -89,7 +89,7 @@ public class AsyncExample {
 
     private int output(int n) throws InterruptedException {
         Thread.sleep(1000);
-        System.out.println("执行业务:" + n);
+        System.out.println("当前线程：" + Thread.currentThread().getName() + ",执行业务:" + n);
         return n;
     }
 }
