@@ -98,6 +98,7 @@ public class GuavaFutureDemo {
         MainJob mainJob = new MainJob();
         final Thread mainThread = new Thread(mainJob);
         mainThread.setName("主线程");
+        mainThread.start();
 
         // 烧水的业务逻辑
         Callable<Boolean> hotWaterJob = new HotWaterJob();
